@@ -22,6 +22,6 @@ mysum
 mystd <- sd(myvector)
 mystd
 
-
+#help me :(
 
 
