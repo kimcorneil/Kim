@@ -11,23 +11,30 @@
 #' If the input is numeric, check if it is a narcissistic number and display the appropriate message
 
 # Create the readline() prompt
+# Needed to ask the user for specific input  
 question <- readline(prompt = "Please enter a three digit positive number: ")
 
-# I also forgot to add this into my plan - SAY WHERE
-# split the input using unlist and strsplit - EXPLAIN WHAT THEY DO BRIEF
-# do this to break the number into individual numbers - EXPLAIN BETTER
+# I forgot to add this into my plan - it should be after line 8
+# split the input strsplit (splits elements of a character vector)
+# use unlist to break the components of broken into each atomic component. 
+# without unlist broken cannot be converted into a numberic in line WHATTTTTTTT
+# the readline() function returns a character vector which is what strsplit works on
+# do this to break the number into individual numbers so they can later be used to check if the original input was an Armstrong number
 broken <- unlist(strsplit(question, ""))
 
-# I forgot in my plan to add this step but I need it to attempt to convert the input from character to numeric
+# I forgot to add this into my plan - it should be after what I added in line 17
+# Attempt to convert the input  from character to numeric 
+# If it works is.na in line WHAT will return false
+# if the input was not numeric is.na will return true and the user will be prompted to give another number
 broken <- as.numeric(broken)
 
-# I also forgot to add this into my plan - SAY WHERE
+# I also forgot to add this into my plan - it should be after what I added in line 25
 # create n which is the length of broken so it can be used as a power to check for Armstrong numbers 
 n <- length(broken)
 
-# Check if the input is numeric using the if else function
+# Check user input
 if (is.na(question)){
-# Check if question is numeric 
+# Check if question is numeric, if not break - CHECK IF THIS IS WHAT SHE WANTS. IT MAY NOT BE LOWKEY... 
   print(paste(question, "is not numeric, please try again."))
   break
 } else if (n != 3){
