@@ -32,16 +32,16 @@ broken <- as.numeric(broken)
 # create n which is the length of broken so it can be used as a power to check for Armstrong numbers 
 n <- length(broken)
 
-# Check user input
+# Check user input ## FIX THIS STILL GETTING ISSUES WITH NON NUMERIC SINCE IT DOESNT GET TO MY STOP
 if (is.na(question)){
-# Check if question is numeric, if not break - CHECK IF THIS IS WHAT SHE WANTS. IT MAY NOT BE LOWKEY... 
+# Check if question is numeric, if not exit with stop () with an error message
   print(paste(question, "is not numeric, please try again."))
-  break
+  stop("Entry is not numeric. Please try again")
 } else if (n != 3){
-# Check if question is three digits, if not break
+# Check if question is three digits, if not exit with stop () with an error message
   print(paste(question, "is a number but it is not three digits. Please try again."))
-  break
-} else if (sum(broken^n) != question) {
+  stop("Entry is numberic but is not three digits. Please try again")
+} else if (sum(broken^n) != question){
 # If question is not equal to broken^n, then question is not an Armstrong number
   print(paste(question, "is not an Armstrong number"))
 } else if (sum(broken^n) == question){
