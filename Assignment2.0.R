@@ -35,11 +35,9 @@ n <- length(broken)
 # Check user input ## FIX THIS STILL GETTING ISSUES WITH NON NUMERIC SINCE IT DOESNT GET TO MY STOP
 if (is.na(question)){
 # Check if question is numeric, if not exit with stop () with an error message
-  print(paste(question, "is not numeric, please try again."))
   stop("Entry is not numeric. Please try again")
 } else if (n != 3){
 # Check if question is three digits, if not exit with stop () with an error message
-  print(paste(question, "is a number but it is not three digits. Please try again."))
   stop("Entry is numberic but is not three digits. Please try again")
 } else if (sum(broken^n) != question){
 # If question is not equal to broken^n, then question is not an Armstrong number
